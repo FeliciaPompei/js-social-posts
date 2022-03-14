@@ -221,13 +221,12 @@ for (let i = 0; i < posts.length ; i++){
     likedButton[i].addEventListener('click', function(){
         this.classList.toggle('like-button--liked');
         let newLikes = posts[i].likes +1;
+        likedPosts.push(posts[i]['id']);
         likeCounter[i].innerHTML = newLikes;
         console.log(newLikes);
-        if(posts[i].likes == newLikes){
-            likedPosts.push(posts[i]);
-            console.log(likedPosts);
-        }
+        console.log(likedPosts);
     });
+
 };
 
 
