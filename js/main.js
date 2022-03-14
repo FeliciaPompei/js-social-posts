@@ -171,54 +171,55 @@ const posts = [
 
 // MileStone 2
 
-for(let i =0; i < posts.length; i++){
+posts.forEach((element) => {
+
     document.getElementById('container').innerHTML += 
-`
-<div class="post">
-            <div class="post__header">
-                <div class="post-meta">                    
-                    <div class="post-meta__icon">
-                        <img class="profile-pic" src="${posts[i].author.image}" alt="${posts[i].author.name}">                    
+    `
+    <div class="post">
+                <div class="post__header">
+                    <div class="post-meta">                    
+                        <div class="post-meta__icon">
+                            <img class="profile-pic" src="${element.author.image}" alt="${element.author.name}">                    
+                        </div>
+                        <div class="post-meta__data">
+                            <div class="post-meta__author">${element.author.name}</div>
+                            <div class="post-meta__time">${element.created}</div>
+                        </div>                    
                     </div>
-                    <div class="post-meta__data">
-                        <div class="post-meta__author">${posts[i].author.name}</div>
-                        <div class="post-meta__time">${posts[i].created}</div>
-                    </div>                    
                 </div>
+                <div class="post__text">${element.content}</div>
+                <div class="post__image">
+                    <img src="${element.media}" alt="Random Image">
+                </div>
+                <div class="post__footer">
+                    <div class="likes js-likes">
+                        <div class="likes__cta">
+                            <a class="like-button js-like-button" href="#" data-postid="1">
+                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="like-button__label">Mi Piace</span>
+                            </a>
+                        </div>
+                        <div class="likes__counter">
+                            Piace a <b id="like-counter-1" class="js-likes-counter">${element.likes}</b> persone
+                        </div>
+                    </div> 
+                </div>            
             </div>
-            <div class="post__text">${posts[i].content}</div>
-            <div class="post__image">
-                <img src="${posts[i].media}" alt="Random Image">
-            </div>
-            <div class="post__footer">
-                <div class="likes js-likes">
-                    <div class="likes__cta">
-                        <a class="like-button js-like-button" href="#" data-postid="1">
-                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                            <span class="like-button__label">Mi Piace</span>
-                        </a>
-                    </div>
-                    <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
-                    </div>
-                </div> 
-            </div>            
-        </div>
-`
-}
+    `
+});
 
 //MileStone 3
 /**
     Milestone 3 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
  */
-const likedButton = document.querySelectorAll(".js-like-button");
+const likedButton = document.querySelector(".js-like-button");
 console.log(likedButton);
 const likedPosts = [];
 likedButton.addEventListener('click', function(){
     this.classList.toggle('like-button--liked');
-    // posts.map((element) => {
-    //     console.log(element.likes +=1);
-    // });
+    posts.map((element) => {
+        console.log(element.likes +=1);
+    });
 });
 
 
