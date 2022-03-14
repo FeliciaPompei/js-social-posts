@@ -111,6 +111,61 @@ const posts = [
         "likes": 0,
         "created": "2021-10-05"
     },
+    {
+        "id": 11,
+        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "media": "https://unsplash.it/600/400?image=209",
+        "author": {
+            "name": "Micheal Bubal",
+            "image": "https://unsplash.it/300/300?image=19",
+        },
+        "likes": 79,
+        "created": "2021-12-05"
+    },
+    {
+        "id": 12,
+        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "media": "https://unsplash.it/600/400?image=29",
+        "author": {
+            "name": "Harry Potter Fan Page",
+            "image": "https://unsplash.it/300/300?image=19",
+        },
+        "likes": 42,
+        "created": "2021-10-05"
+    },
+    {
+        "id": 13,
+        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "media": "https://unsplash.it/600/400?image=179",
+        "author": {
+            "name": "BCC World New",
+            "image": "https://unsplash.it/300/300?image=140",
+        },
+        "likes": 12,
+        "created": "2021-10-05"
+    },
+    {
+        "id": 14,
+        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "media": "https://unsplash.it/600/400?image=249",
+        "author": {
+            "name": "Arianna Grande",
+            "image": "https://unsplash.it/300/300?image=1",
+        },
+        "likes": 800000,
+        "created": "2021-10-05"
+    },
+    {
+        "id": 15,
+        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "media": "https://unsplash.it/600/400?image=299",
+        "author": {
+            "name": "Michela Surname",
+            "image": "https://unsplash.it/300/300?image=10",
+        },
+        "likes": 78,
+        "created": "2021-10-05"
+    }
 
 ];
 
@@ -157,11 +212,15 @@ for(let i =0; i < posts.length; i++){
     Milestone 3 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
  */
 const likedButton = document.querySelectorAll(".js-like-button");
-console.log(likedButton)
+console.log(likedButton);
+const likedPosts = [];
 likedButton.addEventListener('click', function(){
-    this.classList.toggle('like-button--liked')
-    posts.likes ++;
+    this.classList.toggle('like-button--liked');
+    // posts.map((element) => {
+    //     console.log(element.likes +=1);
+    // });
 });
 
-const likedPosts = [];
+
+
 
